@@ -1,19 +1,18 @@
-<section class="card-container">
+<main class="card-container">
   <header class="card-container__header">
-    <h1>{{entity.title}}</h1>
+    {{entity.title}}
   </header>
   <main class="card-container__body">
-    <p>{{entity.Value}}</p>
+    {{entity.Value}}
   </main>
   <footer class="card-container__footer">
-    <section class="card-container__footer--variation">
+    <section class="card-container__footer--details borderCenter">
       <p>Variação (%)</p>
       <p>{{entity.Variation}}</p>
     </section>
-    <section>
+    <section class="card-container__footer--details">
       <p>Atualizado</p>
       <p>{{entity.Updated}}</p>
     </section>
   </footer>
-
-</section>
+</main>

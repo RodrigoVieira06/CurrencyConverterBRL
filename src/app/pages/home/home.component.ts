@@ -28,7 +28,19 @@ export class HomeComponent {
         Value: '0,00',
         Variation: '0,11',
         Updated: '00:00:00'
-      }
+      },
+      {
+        title: 'Dólar',
+        Value: '0,00',
+        Variation: '0,11',
+        Updated: '00:00:00'
+      },
+      {
+        title: 'Dólar',
+        Value: '0,00',
+        Variation: '0,11',
+        Updated: '00:00:00'
+      },
     ];
   }
 }
