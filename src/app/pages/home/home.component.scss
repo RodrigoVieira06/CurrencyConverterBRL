@@ -1,0 +1,10 @@
+@import "../../../../public/assets/styles/colors";
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: $app-background;
+  height: 100%;
+}
