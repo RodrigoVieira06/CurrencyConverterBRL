@@ -1,18 +1,35 @@
-<main class="card-container">
+<section class="card-container">
   <header class="card-container__header">
-    {{entity.title}}
+    {{entity.name}}
   </header>
-  <main class="card-container__body">
-    {{entity.Value}}
+  <main class="card-container__body" *ngIf="!onLoading && !onError">
+    <p [ngClass]="addingBidColorClass()">R${{entity.bid}}</p>
   </main>
-  <footer class="card-container__footer">
+  <footer class="card-container__footer" *ngIf="!onLoading && !onError">
     <section class="card-container__footer--details borderCenter">
       <p>Variação (%)</p>
-      <p>{{entity.Variation}}</p>
+      <p>{{entity.pctChange}}</p>
     </section>
     <section class="card-container__footer--details">
       <p>Atualizado</p>
-      <p>{{entity.Updated}}</p>
+      <p>{{entity.create_date}}</p>
     </section>
   </footer>
-</main>
+  <main class="card-container__error" *ngIf="onError && !onLoading">
+    <p>Algo deu errado</p>
+    <button type="button" (click)="reloadEntityData()">RECARREGAR</button>
+  </main>
+  <main class="card-container__loading" *ngIf="onLoading">
+    <svg width='100px' height='100px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid" class="uil-ring-alt">
+      <rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect>
+      <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0)" fill="none" stroke-width="10" stroke-linecap="round">
+      </circle>
+      <circle cx="50" cy="50" r="40" stroke="#737c84" fill="none" stroke-width="6" stroke-linecap="round">
+        <animate attributeName="stroke-dashoffset" dur="1.5s" repeatCount="indefinite" from="0" to="502"></animate>
+        <animate attributeName="stroke-dasharray" dur="1.5s" repeatCount="indefinite"
+          values="188.25 62.75;1 250;188.25 62.75"></animate>
+      </circle>
+    </svg>
+  </main>
+</section>

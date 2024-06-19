@@ -28,7 +28,7 @@
     justify-content: center;
     background-color: $card-background;
     height: 100%;
-    font-size: 95px;
+    font-size: 64px;
     color: $text-green;
 
     .red-condition {
@@ -38,7 +38,6 @@
     .blue-condition {
       color: $text-blue;
     }
-
   }
 
   &__footer {
@@ -55,24 +54,62 @@
       height: 100%;
       width: 100%;
       display: flex;
-      gap: 5px;
+      gap: 15px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
       :first-child {
         font-weight: 600;
+        font-size: 18px;
         color: $text-secundary;
       }
 
       :last-child {
         font-weight: 600;
+        font-size: 24px;
         color: $text-basic;
       }
     }
 
     .borderCenter {
       border-right: 1px solid $border-color;
+    }
+  }
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $card-background;
+    height: 100%;
+  }
+
+  &__error {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: $card-background;
+    height: 100%;
+
+    p {
+      color: $text-basic;
+      font-weight: 400;
+      font-size: 26px;
+    }
+
+    button {
+      width: 173px;
+      height: 58px;
+      border: none;
+      border-radius: 10px;
+      background-color: $button-background;
+      font-weight: 600;
+      font-size: 18px;
+      color: $text-basic;
+      cursor: pointer;
     }
   }
 }

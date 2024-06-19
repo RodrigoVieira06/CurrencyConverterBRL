@@ -1,5 +1,5 @@
 <main class="home-container">
-  <section *ngFor="let currency of currenciesData">
-    <app-currency-card [entity]="currency"></app-currency-card>
+  <section class="home-container__cards-section" *ngFor="let currency of currenciesData">
+    <app-currency-card [entity]="currency" [onLoading]="onLoading" [onError]="onError" [reloadEntityData]="getCurrenciesData"></app-currency-card>
   </section>
 </main>
