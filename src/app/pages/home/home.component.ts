@@ -3,7 +3,7 @@ import { CurrencyCardComponent } from '../../shared/components/currency-card/cur
 import { ICurrency, ICurrencyTypes } from '../../shared/types/currency.type';
 import { CurrencyConverterService } from '../../shared/services/currency/currency-converter.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Subscription, catchError, interval, startWith, switchMap, tap, throwError, timer } from 'rxjs';
+import { Subscription, catchError, switchMap, tap, throwError, timer } from 'rxjs';
 import { formatCreateDate, removingFirstCurrencyName } from '../../shared/utils/utils';
 
 @Component({
@@ -80,23 +80,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         })
       )
       .subscribe();
-
-    // this.currencyConverterService.getCurrencies()
-    //   .subscribe({
-    //     next: (currencyConverterAPIResponse: ICurrencyTypes) => {
-    //       let currencies: ICurrency[] = [];
-    //       for (const currencyCode in currencyConverterAPIResponse) {
-    //         currencies.push(currencyConverterAPIResponse[currencyCode]);
-    //       }
-    //       this.currenciesData = [...currencies];
-    //       this.currencyDataTreatment();
-    //       this.onLoading = false;
-    //     },
-    //     error: () => {
-    //       this.onError = true;
-    //       this.onLoading = false;
-    //     }
-    //   });
   }
 
   private currencyDataTreatment() {
