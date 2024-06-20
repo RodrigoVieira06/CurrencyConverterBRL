@@ -5,15 +5,15 @@
 # Bem vindo ao sistema de conversão de moedas (BRL) 🚀
 
 Este é um sistema desenvolvido com a finalidade de atender o teste de proficiência
-em tecnologias Front-End da empresa Frete Rápido. Nele, você irá encontrar uma uma
+em tecnologias front-end da empresa Frete Rápido. Nele, você irá encontrar uma 
 interface limpa contendo a conversão da moeda Real Brasileiro (BRL), para 3 outras
 moedas: Dólar Canadense (CAD), Peso Argentino (ARS) e Libra Esterlina (GBP). Além
 disso, cada conversão contará com sua variação (em porcentagem) e o tempo de
-atualização, onde as inforamções são atualizadas a cada 3 minutos pela plataforma.
+atualização, onde as informações são atualizadas a cada 3 minutos pela plataforma.
 
 # Índice 📝
 
-- [Introdução](#primeiros-passos-🏗️)
+- [Primeiros passos](#primeiros-passos-🏗️)
 - [Conhecendo o projeto](#conhecendo-o-projeto-📖)
   - [Estrutura de pastas](#estrutura-de-pastas-🏛️)
 
@@ -25,7 +25,7 @@ ssh no git e github. Caso precise configurar, acesse a [documentação de config
 de ambiente](docs/configuracaoDeAmbiente.md).
 
 Após configurar o ambiente, vamos realizar o download do projeto. Abra o terminal
-vá até o deretório desejado e realize o clone via SSH da seguinte forma:
+vá até o diretório desejado e realize o clone via SSH da seguinte forma:
 
 ```
   git clone git@github.com:RodrigoVieira06/freteRapidoTest-CurrencyConverterBRL.git
@@ -37,7 +37,7 @@ comando:
  make build
 ```
 
-Por fim, podemos iniciar a imagem criada com o comando:
+Por fim, podemos iniciar o projeto com:
 ```
  make run
 ```
@@ -45,8 +45,8 @@ Por fim, podemos iniciar a imagem criada com o comando:
 Esses comandos "make" irão executar comandos docker automaticamente, facilitando a 
 inicialização do sistema.
 
-Antes de realizar um novo pull request, certifique-se de que os testes conitnuam
-funcionando, utilizando o comando:
+Antes de realizar um novo pull request, certifique-se de que os testes continuam
+funcionando, utilizando:
 ```
   ng test
 ```
@@ -56,7 +56,7 @@ funcionando, utilizando o comando:
 Esta aplicação foi desenvolvida com Angular 18 (útlima versão disponibilizada no 
 momento do desenvolvimento), além de estilizações com SCSS e uso de padrões com a lib 
 RxJS para as requisições e atualização de dados. Além disso, o app está em um container
-docker, para auxiliar que outros desewnvolvedores possam atuar em novas features e 
+docker, para auxiliar que outros desenvolvedores possam atuar em novas features e 
 correções sem se preocupar com seu ambiente de trabalho. O projeto conta também com 
 testes de unidade utilizando Karma e Jasmine, garantindo que as funcionalidades estejam
 funcionando sempre que um novo commit for realizado.
