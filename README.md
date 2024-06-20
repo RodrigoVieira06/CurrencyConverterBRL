@@ -47,8 +47,13 @@ Com os comandos do Makefile, iremos resumir o processo do Docker. Basta utilizar
 make all
 ```
 
-Esse comando irá executar o `make build` e o `make run` em sequência. Para mais
-detalhes, vá até o tópico [Construir e Rodar o Projeto com Docker](#construir-e-rodar-o-projeto-com-o-docker).
+Caso já tenha a imagem construída, basta usar:
+```sh
+make run
+```
+
+Para entender melhor os comandos make, vá até o tópico 
+[Construir e Rodar o Projeto com Docker](#construir-e-rodar-o-projeto-com-o-docker).
 
 ## Conhecendo o projeto
 
@@ -148,9 +153,17 @@ Para rodar o contêiner Docker do projeto, execute:
 make run
 ```
 
+### Construir e rodar o contêiner Docker
+
+Caso deseje construir e rodar o contêiner logo em seguida:
+
+```sh
+make all
+```
+
 ### Limpar a imagem Docker
 
-Para remover a imagem Docker criada, execute:
+Para remover a imagem Docker criada:
 
 ```sh
 make clean
