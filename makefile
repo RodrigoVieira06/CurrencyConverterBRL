@@ -1,4 +1,4 @@
-IMAGE_NAME=nome-da-sua-aplicacao-angular
+IMAGE_NAME=currency-converter
 
 PORT=4200
 
