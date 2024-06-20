@@ -174,7 +174,7 @@ Make é uma ferramenta de automação de compilação que ajuda a gerenciar tare
 
    ```sh
    sudo apt-get update
-   sudo apt-get install build-essential
+   sudo apt install make
    ```
 
    **Fedora**:
