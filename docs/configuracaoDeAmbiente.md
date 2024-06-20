@@ -32,6 +32,13 @@ Git é um sistema de controle de versão distribuído. Você pode instalar o Git
    sudo dnf install git
    ```
 
+2. Configure seu nome de usuário e endereço de e-mail no Git. Isso é importante para que suas contribuições sejam identificadas corretamente nos commits. Substitua com seu nome e seu email:
+
+```sh
+  git config --global user.name "Seu Nome"
+  git config --global user.email "seu_email@example.com"
+```
+
 ## 2. Configuração de SSH
 
 Para clonar repositórios usando SSH, você precisa gerar uma chave SSH e adicioná-la à sua conta GitHub.
