@@ -117,8 +117,6 @@ Docker é uma plataforma para desenvolver, enviar e executar aplicações dentro
 
 1. Abra o terminal e execute os seguintes comandos para instalar o Docker:
 
-   Observação: Não esqueça de substituir `"$USER"` pelo seu usuário
-
    **Ubuntu/Debian**:
 
    ```sh
