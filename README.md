@@ -160,7 +160,10 @@ Para remover a imagem Docker criada, execute:
 
 Durante o desenvolvimento, você pode usar o comando make run para iniciar a aplicação Angular dentro de um contêiner Docker. A aplicação estará disponível em http://localhost:4200.
 
-Certifique-se de que todos os testes estão passando antes de enviar alterações para o repositório. Use os comandos de teste conforme definido no seu projeto Angular.
+Certifique-se de que todos os testes estão passando antes de enviar alterações para o repositório. Use o comando de teste a seguir:
+```sh
+  ng test
+```
 
 # Conclusão
 
