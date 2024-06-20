@@ -36,15 +36,15 @@ vá até o diretório desejado e realize o clone via SSH e vá até a pasta prin
 da seguinte forma:
 
 ```sh
-  git clone git@github.com:RodrigoVieira06/freteRapidoTest-CurrencyConverterBRL.git
-  cd /freteRapidoTest-CurrencyConverterBRL
+git clone git@github.com:RodrigoVieira06/freteRapidoTest-CurrencyConverterBRL.git
+cd /freteRapidoTest-CurrencyConverterBRL
 ```
 
 Com o repositorio em mãos, podemos dar início a construção e execução da imagem docker.
 Com os comandos do Makefile, iremos resumir o processo do Docker. Basta utilizar:
 
 ```sh
-  make all
+make all
 ```
 
 Esse comando irá executar o `make build` e o `make run` em sequência. Para mais
@@ -137,7 +137,7 @@ Eles disparam comandos docker para as finalidades abaixo:
 Para construir a imagem Docker do projeto, execute o seguinte comando no terminal:
 
 ```sh
-  make build
+make build
 ```
 
 ### Rodar o contêiner Docker
@@ -145,7 +145,7 @@ Para construir a imagem Docker do projeto, execute o seguinte comando no termina
 Para rodar o contêiner Docker do projeto, execute:
 
 ```sh
-  make run
+make run
 ```
 
 ### Limpar a imagem Docker
@@ -153,7 +153,7 @@ Para rodar o contêiner Docker do projeto, execute:
 Para remover a imagem Docker criada, execute:
 
 ```sh
-  make clean
+make clean
 ```
 
 ## Desenvolvimento e testes
@@ -163,7 +163,7 @@ Durante o desenvolvimento, você pode usar o comando make run para iniciar a apl
 Certifique-se de que todos os testes estão passando antes de enviar alterações para o repositório. Use o comando de teste a seguir:
 
 ```sh
-  ng test
+ng test
 ```
 
 ## Conclusão

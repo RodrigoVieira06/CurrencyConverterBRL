@@ -34,10 +34,10 @@ Git é um sistema de controle de versão distribuído. Você pode instalar o Git
 
 2. Configure seu nome de usuário e endereço de e-mail no Git. Isso é importante para que suas contribuições sejam identificadas corretamente nos commits. Substitua com seu nome e seu email:
 
-```sh
-  git config --global user.name "Seu Nome"
-  git config --global user.email "seu_email@example.com"
-```
+    ```sh
+    git config --global user.name "Seu Nome"
+    git config --global user.email "seu_email@example.com"
+    ```
 
 ## 2. Configuração de SSH
 
@@ -49,50 +49,53 @@ Para clonar repositórios usando SSH, você precisa gerar uma chave SSH e adicio
 
 2. Execute o seguinte comando para gerar uma nova chave SSH (substitua "your_email@example.com" pelo seu e-mail):
 
-```sh
-  ssh-keygen -t ed25519 -C "your_email@example.com"
-```
+    ```sh
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+    ```
 
 Se você estiver usando uma versão mais antiga do OpenSSH, use:
 
-```sh
-  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-```
+    ```sh
+    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    ```
 
 3. Pressione Enter para aceitar o local padrão do arquivo.
 
 4. Digite uma senha segura quando solicitado (opcional, mas recomendado).
 
 ### Adicionar a chave SSH ao agente SSH
+
 1. Inicie o agente SSH:
 
-```sh
-  eval "$(ssh-agent -s)"
-```
+    ```sh
+    eval "$(ssh-agent -s)"
+    ```
 
 2. Adicione sua chave SSH ao agente:
 
-```sh
-  ssh-add ~/.ssh/id_ed25519
-```
+    ```sh
+    ssh-add ~/.ssh/id_ed25519
+    ```
+
 Ou para RSA:
 
-```sh
-  ssh-add ~/.ssh/id_rsa
-```
+    ```sh
+    ssh-add ~/.ssh/id_rsa
+    ```
 
 ### Adicionar a chave SSH ao GitHub
 
 1. Copie o conteúdo da chave SSH para a área de transferência:
 
-```sh
-  cat ~/.ssh/id_ed25519.pub
-```
+    ```sh
+    cat ~/.ssh/id_ed25519.pub
+    ```
+
 Ou para RSA:
 
-```sh
-cat ~/.ssh/id_rsa.pub
-```
+    ```sh
+    cat ~/.ssh/id_rsa.pub
+    ```
 
 2. Vá para GitHub, acesse Settings > SSH and GPG keys > New SSH key.
 
