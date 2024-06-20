@@ -32,7 +32,68 @@ Git é um sistema de controle de versão distribuído. Você pode instalar o Git
    sudo dnf install git
    ```
 
-## 2. Instalação do Docker
+## 2. Configuração de SSH
+
+Para clonar repositórios usando SSH, você precisa gerar uma chave SSH e adicioná-la à sua conta GitHub.
+
+### Gerar uma chave SSH
+
+1. Abra o terminal.
+
+2. Execute o seguinte comando para gerar uma nova chave SSH (substitua "your_email@example.com" pelo seu e-mail):
+
+```sh
+  ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+Se você estiver usando uma versão mais antiga do OpenSSH, use:
+
+```sh
+  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+3. Pressione Enter para aceitar o local padrão do arquivo.
+
+4. Digite uma senha segura quando solicitado (opcional, mas recomendado).
+
+### Adicionar a chave SSH ao agente SSH
+1. Inicie o agente SSH:
+
+```sh
+  eval "$(ssh-agent -s)"
+```
+
+2. Adicione sua chave SSH ao agente:
+
+```sh
+  ssh-add ~/.ssh/id_ed25519
+```
+Ou para RSA:
+
+```sh
+  ssh-add ~/.ssh/id_rsa
+```
+
+### Adicionar a chave SSH ao GitHub
+
+1. Copie o conteúdo da chave SSH para a área de transferência:
+
+```sh
+  cat ~/.ssh/id_ed25519.pub
+```
+Ou para RSA:
+
+```sh
+cat ~/.ssh/id_rsa.pub
+```
+
+2. Vá para GitHub, acesse Settings > SSH and GPG keys > New SSH key.
+
+3. Cole a chave SSH no campo "Key" e dê um título descritivo.
+
+4. Clique em Add SSH key.
+
+## 3. Instalação do Docker
 
 Docker é uma plataforma para desenvolver, enviar e executar aplicações dentro de contêineres. Siga as instruções abaixo para instalar o Docker:
 
@@ -77,7 +138,7 @@ Docker é uma plataforma para desenvolver, enviar e executar aplicações dentro
 
 2. Reinicie seu computador para aplicar as alterações de grupo de usuários.
 
-## 3. Instalação do Make
+## 4. Instalação do Make
 
 Make é uma ferramenta de automação de compilação que ajuda a gerenciar tarefas comuns de desenvolvimento.
 

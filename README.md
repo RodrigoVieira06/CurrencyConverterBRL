@@ -11,7 +11,7 @@ moedas: Dólar Canadense (CAD), Peso Argentino (ARS) e Libra Esterlina (GBP). Al
 disso, cada conversão contará com sua variação (em porcentagem) e o tempo de
 atualização, onde as informações são atualizadas a cada 3 minutos pela plataforma.
 
-# Índice 📝
+## Índice 📝
 
 - [1. Primeiros passos](#primeiros-passos)
 - [2. Conhecendo o projeto](#conhecendo-o-projeto)
@@ -24,7 +24,7 @@ atualização, onde as informações são atualizadas a cada 3 minutos pela plat
 - [5. Conclusão](#conclusão)
 - [6. Referências](#referências)
 
-# Primeiros passos
+## Primeiros passos
 
 Para iniciar o projeto, é importante que seu ambiente de desenvolvimento esteja
 devidamente configurado, contendo a instalação do docker, git e a configuração de
@@ -50,7 +50,7 @@ Com os comandos do Makefile, iremos resumir o processo do Docker. Basta utilizar
 Esse comando irá executar o `make build` e o `make run` em sequência. Para mais
 detalhes, vá até o tópico [Construir e Rodar o Projeto com Docker](#construir-e-rodar-o-projeto-com-o-docker).
 
-# Conhecendo o projeto
+## Conhecendo o projeto
 
 Esta aplicação foi desenvolvida com Angular 18 (útlima versão disponibilizada no
 momento do desenvolvimento), além de estilizações com SCSS e uso de padrões com a lib
@@ -69,7 +69,7 @@ funcionando sempre que um novo commit for realizado.
   <img alt="Docker" src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white">
 </div>
 
-## Estrutura de pastas
+### Estrutura de pastas
 
 Abaixo, está o modelo da estrutura dos diretórios do projeto.
 
@@ -122,7 +122,7 @@ Abaixo, está o modelo da estrutura dos diretórios do projeto.
 Você pode entender detalhadamente a estrutura de diretórios utilizada acessando a
 [documentação de estrutura do projeto](docs/estruturaDoProjeto.md).
 
-# Construir e rodar o projeto com o Docker
+## Construir e rodar o projeto com o Docker
 
 Para este projeto, foi utilizado o Makefile, pelos seguintes motivos:
 
@@ -132,7 +132,7 @@ Para este projeto, foi utilizado o Makefile, pelos seguintes motivos:
 
 Eles disparam comandos docker para as finalidades abaixo:
 
-## Construir o contêiner Docker
+### Construir o contêiner Docker
 
 Para construir a imagem Docker do projeto, execute o seguinte comando no terminal:
 
@@ -140,7 +140,7 @@ Para construir a imagem Docker do projeto, execute o seguinte comando no termina
   make build
 ```
 
-## Rodar o contêiner Docker
+### Rodar o contêiner Docker
 
 Para rodar o contêiner Docker do projeto, execute:
 
@@ -148,7 +148,7 @@ Para rodar o contêiner Docker do projeto, execute:
   make run
 ```
 
-## Limpar a imagem Docker
+### Limpar a imagem Docker
 
 Para remover a imagem Docker criada, execute:
 
@@ -156,7 +156,7 @@ Para remover a imagem Docker criada, execute:
   make clean
 ```
 
-# Desenvolvimento e testes
+## Desenvolvimento e testes
 
 Durante o desenvolvimento, você pode usar o comando make run para iniciar a aplicação Angular dentro de um contêiner Docker. A aplicação estará disponível em ``http://localhost:4200``.
 
@@ -166,13 +166,13 @@ Certifique-se de que todos os testes estão passando antes de enviar alteraçõe
   ng test
 ```
 
-# Conclusão
+## Conclusão
 
 Você configurou com sucesso seu ambiente de desenvolvimento. Se tiver qualquer problema ou dúvida, consulte a documentação oficial das ferramentas utilizadas ou entre em contato com a equipe de desenvolvimento.
 
 Let's code! 👨🏻‍💻👩🏻‍💻
 
-# Referências
+## Referências
 
 Para consultar as referências utilizadas para as documentações desse projeto,
 acesse o arquivo [Referências da documentação](docs/referenciasDaDocumentacao.md)
