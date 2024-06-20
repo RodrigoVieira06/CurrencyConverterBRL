@@ -48,7 +48,7 @@ Com os comandos do Makefile, iremos resumir o processo do Docker. Basta utilizar
 ```
 
 Esse comando irá executar o `make build` e o `make run` em sequência. Para mais
-detalhes, vá até o tópico [Construir e Rodar o Projeto com Docker](#construir-e-rodar-o-projeto-com-o-docker-🏗️).
+detalhes, vá até o tópico [Construir e Rodar o Projeto com Docker](#construir-e-rodar-o-projeto-com-o-docker).
 
 # Conhecendo o projeto
 
@@ -158,9 +158,10 @@ Para remover a imagem Docker criada, execute:
 
 # Desenvolvimento e testes
 
-Durante o desenvolvimento, você pode usar o comando make run para iniciar a aplicação Angular dentro de um contêiner Docker. A aplicação estará disponível em http://localhost:4200.
+Durante o desenvolvimento, você pode usar o comando make run para iniciar a aplicação Angular dentro de um contêiner Docker. A aplicação estará disponível em ``http://localhost:4200``.
 
 Certifique-se de que todos os testes estão passando antes de enviar alterações para o repositório. Use o comando de teste a seguir:
+
 ```sh
   ng test
 ```
