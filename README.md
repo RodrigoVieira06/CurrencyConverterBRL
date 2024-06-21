@@ -19,7 +19,7 @@ atualização, onde as informações são atualizadas a cada 3 minutos pela plat
 - [3. Construir e rodar o projeto com o Docker](#construir-e-rodar-o-projeto-com-o-docker)
   - [3.1. Construir o contêiner Docker](#construir-o-contêiner-docker)
   - [3.2. Rodar o contêiner Docker](#rodar-o-contêiner-docker)
-  - [3.3. Limpar a imagem Docker](#limpar-a-imagem-docker)
+  - [3.3. Parar a imagem Docker](#parar-a-imagem-docker)
 - [4. Desenvolvimento e testes](#desenvolvimento-e-testes)
 - [5. Conclusão](#conclusão)
 - [6. Referências](#referências)
@@ -40,8 +40,9 @@ git clone git@github.com:RodrigoVieira06/freteRapidoTest-CurrencyConverterBRL.gi
 cd /freteRapidoTest-CurrencyConverterBRL
 ```
 
-Com o repositorio em mãos, podemos dar início a construção e execução da imagem docker.
-Com os comandos do Makefile, iremos resumir o processo do Docker. Basta utilizar:
+Com o repositorio em mãos, podemos dar início a construção e execução da imagem docker e 
+instalação do node_modules da aplicação. Com os comandos do Makefile, iremos resumir da
+seguinte forma:
 
 ```sh
 make all
@@ -51,6 +52,13 @@ Caso já tenha a imagem construída, basta usar:
 ```sh
 make run
 ```
+
+### Observações
+
+1. Caso tenha algum problema com a utilização do make, adicione ``sudo``
+no começo de cada comando.
+
+2. O comando run irá iniciar o contêiner em segundo plano.
 
 Para entender melhor os comandos make, vá até o tópico 
 [Construir e Rodar o Projeto com Docker](#construir-e-rodar-o-projeto-com-o-docker).
@@ -153,6 +161,9 @@ Para rodar o contêiner Docker do projeto, execute:
 make run
 ```
 
+Caso já tenha construído a imagem, basta utilizar este comando que sua aplicação já
+estará disponível.
+
 ### Construir e rodar o contêiner Docker
 
 Caso deseje construir e rodar o contêiner logo em seguida:
@@ -161,12 +172,14 @@ Caso deseje construir e rodar o contêiner logo em seguida:
 make all
 ```
 
-### Limpar a imagem Docker
+Este comando utiliza os comandos ``make build`` e ``make run`` em sequência.
 
-Para remover a imagem Docker criada:
+### Parar a imagem Docker
+
+Para parar a imagem docker em execução:
 
 ```sh
-make clean
+make stop
 ```
 
 ## Desenvolvimento e testes
