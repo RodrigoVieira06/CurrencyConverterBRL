@@ -37,7 +37,7 @@ da seguinte forma:
 
 ```sh
 git clone git@github.com:RodrigoVieira06/freteRapidoTest-CurrencyConverterBRL.git
-cd /freteRapidoTest-CurrencyConverterBRL
+cd freteRapidoTest-CurrencyConverterBRL/
 ```
 
 Com o repositorio em mãos, podemos dar início a construção e execução da imagem docker e 
