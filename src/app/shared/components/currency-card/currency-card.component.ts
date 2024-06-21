@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ICurrency } from '../../types/currency.type';
 import { CommonModule } from '@angular/common';
 import { CurrencyConverterService } from '../../services/currency/currency-converter.service';
+import { formatCreateDate, removingFirstCurrencyName } from '../../utils/utils';
 
 @Component({
   selector: 'app-currency-card',
@@ -10,14 +11,18 @@ import { CurrencyConverterService } from '../../services/currency/currency-conve
   templateUrl: './currency-card.component.html',
   styleUrl: './currency-card.component.scss'
 })
-export class CurrencyCardComponent {
+export class CurrencyCardComponent implements OnInit {
   @Input() public entity!: ICurrency;
   @Input() public onLoading!: boolean;
   @Input() public onError!: boolean;
 
   @Input() public reloadEntityData!: () => void;
 
-  constructor(public currencyConverterService: CurrencyConverterService) {}
+  constructor(public currencyConverterService: CurrencyConverterService) { }
+
+  ngOnInit(): void {
+    this.currencyDataTreatment();
+  }
 
   public addingBidColorClass() {
     const checkRedColor: boolean = parseFloat(this.entity.bid) <= 1;
@@ -27,5 +32,12 @@ export class CurrencyCardComponent {
       'red-condition': checkRedColor,
       'blue-condition': checkBlueColor
     };
+  }
+
+  public currencyDataTreatment() {
+    this.entity.name = removingFirstCurrencyName(this.entity.name);
+    this.entity.bid = this.entity.bid.replace('.', ',');
+    this.entity.pctChange = this.entity.pctChange.replace('.', ',');
+    this.entity.create_date = formatCreateDate(this.entity.create_date);
   }
 }

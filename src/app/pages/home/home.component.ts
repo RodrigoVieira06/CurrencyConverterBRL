@@ -3,8 +3,7 @@ import { CurrencyCardComponent } from '../../shared/components/currency-card/cur
 import { ICurrency, ICurrencyTypes } from '../../shared/types/currency.type';
 import { CurrencyConverterService } from '../../shared/services/currency/currency-converter.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Subscription, catchError, switchMap, tap, throwError, timer } from 'rxjs';
-import { formatCreateDate, removingFirstCurrencyName } from '../../shared/utils/utils';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -28,6 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.currencyConverterService.clearCache();
     if (isPlatformBrowser(this.platformId)) {
       this.subscriptions.add(this.getCurrenciesData());
     }
@@ -60,34 +60,21 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     ];
 
-    return timer(0, 180000)
-      .pipe(
-        switchMap(() => this.currencyConverterService.getCurrencies()),
-        tap((currencyConverterAPIResponse: ICurrencyTypes) => {
+    return this.currencyConverterService.getCurrencies()
+      .subscribe({
+        next: (currencyConverterAPIResponse: ICurrencyTypes) => {
           let currencies: ICurrency[] = [];
           for (const currencyCode in currencyConverterAPIResponse) {
             currencies.push(currencyConverterAPIResponse[currencyCode]);
           }
           this.currenciesData = [...currencies];
-          this.currencyDataTreatment();
           this.onError = false;
           this.onLoading = false;
-        }),
-        catchError((err) => {
+        },
+        error: () => {
           this.onError = true;
           this.onLoading = false;
-          return throwError(() => err);
-        })
-      )
-      .subscribe();
-  }
-
-  private currencyDataTreatment() {
-    this.currenciesData.map((currency) => {
-      currency.name = removingFirstCurrencyName(currency.name);
-      currency.bid = currency.bid.replace('.', ',');
-      currency.pctChange = currency.pctChange.replace('.', ',');
-      currency.create_date = formatCreateDate(currency.create_date);
-    })
+        }
+      });
   }
 }

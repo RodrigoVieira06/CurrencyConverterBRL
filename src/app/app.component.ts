@@ -9,6 +9,4 @@ import { HeaderComponent } from './shared/components/header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'freteRapidoTest-CurrencyConverterBRL2';
-}
+export class AppComponent { }
