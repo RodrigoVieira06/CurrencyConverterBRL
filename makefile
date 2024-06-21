@@ -1,11 +1,12 @@
 IMAGE_NAME=currency-converter
 PORT=4200
+CURRENT_DIR := $(shell pwd)
 
 build:
 		docker build -t $(IMAGE_NAME) .
 
 run:
-		docker run -d -p $(PORT):$(PORT) -v $(pwd):/app $(IMAGE_NAME)
+		docker run -d -p $(PORT):$(PORT) -v $(CURRENT_DIR):/app $(IMAGE_NAME)
 
 stop:
 		docker stop $(shell docker ps -q -f "ancestor=$(IMAGE_NAME)")
