@@ -10,4 +10,4 @@ run:
 stop:
 		docker stop $(shell docker ps -q -f "ancestor=$(IMAGE_NAME)")
 
-all: install build run
+all: build run
