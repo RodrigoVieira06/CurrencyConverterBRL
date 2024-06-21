@@ -40,25 +40,14 @@ git clone git@github.com:RodrigoVieira06/freteRapidoTest-CurrencyConverterBRL.gi
 cd freteRapidoTest-CurrencyConverterBRL/
 ```
 
-Com o repositorio em mãos, podemos dar início a construção e execução da imagem docker e 
-instalação do node_modules da aplicação. Com os comandos do Makefile, iremos resumir da
-seguinte forma:
+Com o repositorio em mãos, podemos inciar com seguinde comando:
 
 ```sh
-make all
+ng serve
 ```
 
-Caso já tenha a imagem construída, basta usar:
-```sh
-make run
-```
-
-### Observações
-
-1. Caso tenha algum problema com a utilização do make, adicione ``sudo``
-no começo de cada comando.
-
-2. O comando run irá iniciar o contêiner em segundo plano.
+Caso queria iniciar a aplicação via conteiner docker, pode-se utilizar os comandos
+configurados do makefile, que irão simplificar o uso do Docker.
 
 Para entender melhor os comandos make, vá até o tópico 
 [Construir e Rodar o Projeto com Docker](#construir-e-rodar-o-projeto-com-o-docker).
