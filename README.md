@@ -173,13 +173,17 @@ make stop
 
 ## Desenvolvimento e testes
 
-Durante o desenvolvimento, você pode usar o comando make run para iniciar a aplicação Angular dentro de um contêiner Docker. A aplicação estará disponível em ``http://localhost:4200``.
+Durante o desenvolvimento, você pode usar o comando make run para iniciar a aplicação Angular dentro de um contêiner Docker. 
+ou simplesmente utilizar ``ng serve``. A aplicação estará disponível em ``http://localhost:4200``.
 
-Certifique-se de que todos os testes estão passando antes de enviar alterações para o repositório. Use o comando de teste a seguir:
+Antes de enviar qualquer pull request, certifique-se de que todos os testes estão passando antes de enviar alterações para o repositório. Use o comando de teste a seguir:
 
 ```sh
-ng test
+ng test --no-watch --code-coverage
 ```
+
+Este comando irá rodar os testes de unidade e irá informar a cobertura de testes. Sempre que desenvolver uma nova função, recomenda-se adicionar um novo
+teste, para que o percentual se mantenha pelo menos 80% da funções.
 
 ## Conclusão
 
