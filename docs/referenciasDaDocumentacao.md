@@ -17,3 +17,7 @@
 [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
 
 [Make for windows](https://gnuwin32.sourceforge.net/packages/make.htm)
+
+## 4. Node version
+
+[Compatibilidade de versão Angular 18](https://angular.dev/reference/versions)
