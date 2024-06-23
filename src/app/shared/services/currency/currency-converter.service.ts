@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, repeat, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, repeat } from 'rxjs';
 import { ICurrencyTypes } from '../../types/currency.type';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
@@ -19,12 +19,14 @@ export class CurrencyConverterService {
   public getCurrencies(): Observable<ICurrencyTypes> {
     const url = this.baseURL + this.endpoint;
 
-    return this.http.get<ICurrencyTypes>(url).pipe(
-      repeat({ delay: 180000 }),
-      tap((response: ICurrencyTypes) => {
-        this.cache$.next(response)
-      })
-    );
+    return this.http.get<ICurrencyTypes>(url)
+      .pipe(
+        repeat({ delay: 180000 }),
+        map((response: ICurrencyTypes) => {
+          this.cache$.next(response)
+          return this.cache$.getValue()!;
+        })
+      );
   }
 
   public clearCache(): void {

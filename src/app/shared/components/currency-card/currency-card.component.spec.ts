@@ -26,7 +26,6 @@ describe('currency-cardComponent', () => {
     }
     component.onLoading = false;
     component.onError = false;
-    component.reloadEntityData = jasmine.createSpy('reloadEntityData');;
     fixture.detectChanges();
   });
 
@@ -70,8 +69,6 @@ describe('currency-cardComponent', () => {
 
     const reloadButton = fixture.debugElement.query(By.css('button'));
     expect(reloadButton).toBeTruthy();
-    reloadButton.nativeElement.click();
-    expect(component.reloadEntityData).toHaveBeenCalled();
   });
 
   it('should display loading spinner when onLoading is true', () => {

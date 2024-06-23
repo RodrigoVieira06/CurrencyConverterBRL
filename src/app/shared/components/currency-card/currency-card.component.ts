@@ -3,6 +3,7 @@ import { ICurrency } from '../../types/currency.type';
 import { CommonModule } from '@angular/common';
 import { CurrencyConverterService } from '../../services/currency/currency-converter.service';
 import { formatCreateDate, removingFirstCurrencyName } from '../../utils/utils';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-currency-card',
@@ -16,9 +17,10 @@ export class CurrencyCardComponent implements OnInit {
   @Input() public onLoading!: boolean;
   @Input() public onError!: boolean;
 
-  @Input() public reloadEntityData!: () => void;
-
-  constructor(public currencyConverterService: CurrencyConverterService) { }
+  constructor(
+    public currencyConverterService: CurrencyConverterService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
     this.currencyDataTreatment();
@@ -39,5 +41,9 @@ export class CurrencyCardComponent implements OnInit {
     this.entity.bid = this.entity.bid.replace('.', ',');
     this.entity.pctChange = this.entity.pctChange.replace('.', ',');
     this.entity.create_date = formatCreateDate(this.entity.create_date);
+  }
+
+  public reloadPage() {
+    window.location.reload();
   }
 }

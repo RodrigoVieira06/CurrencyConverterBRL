@@ -4,13 +4,14 @@ import { ICurrency, ICurrencyTypes } from '../../shared/types/currency.type';
 import { CurrencyConverterService } from '../../shared/services/currency/currency-converter.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, CurrencyCardComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
@@ -27,7 +28,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.currencyConverterService.clearCache();
     if (isPlatformBrowser(this.platformId)) {
       this.subscriptions.add(this.getCurrenciesData());
     }
@@ -39,26 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   public getCurrenciesData(): Subscription {
     this.onLoading = true;
-    this.currenciesData = [
-      {
-        name: 'Dólar Canadense',
-        bid: '',
-        pctChange: '',
-        create_date: ''
-      },
-      {
-        name: 'Peso Argentino',
-        bid: '',
-        pctChange: '',
-        create_date: ''
-      },
-      {
-        name: 'Libra Esterlina',
-        bid: '',
-        pctChange: '',
-        create_date: ''
-      }
-    ];
+    this.currenciesData = environment.INITIAL_CURRENCIES_MOCKDATA;
 
     return this.currencyConverterService.getCurrencies()
       .subscribe({
