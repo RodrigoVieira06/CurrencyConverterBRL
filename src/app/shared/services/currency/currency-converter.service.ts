@@ -17,11 +17,9 @@ export class CurrencyConverterService {
   constructor(private http: HttpClient) { }
 
   public getCurrencies(): Observable<ICurrencyTypes> {
-    const headers = new HttpHeaders({ 'Cache-Control': 'no-cache' });
-    const options = { headers: headers };
     const url = this.baseURL + this.endpoint;
 
-    return this.http.get<ICurrencyTypes>(url, options).pipe(
+    return this.http.get<ICurrencyTypes>(url).pipe(
       repeat({ delay: 180000 }),
       tap((response: ICurrencyTypes) => {
         this.cache$.next(response)
