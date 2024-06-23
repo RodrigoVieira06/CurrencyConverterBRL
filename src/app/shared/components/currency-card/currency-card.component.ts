@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICurrency } from '../../types/currency.type';
 import { CommonModule } from '@angular/common';
 import { CurrencyConverterService } from '../../services/currency/currency-converter.service';
@@ -16,6 +16,8 @@ export class CurrencyCardComponent implements OnInit {
   @Input() public entity!: ICurrency;
   @Input() public onLoading!: boolean;
   @Input() public onError!: boolean;
+
+  @Output() public retryRequest = new EventEmitter<void>();
 
   constructor(
     public currencyConverterService: CurrencyConverterService,
@@ -43,7 +45,7 @@ export class CurrencyCardComponent implements OnInit {
     this.entity.create_date = formatCreateDate(this.entity.create_date);
   }
 
-  public reloadPage() {
-    window.location.reload();
+  public reloadCurrencyMainComponent(): void {
+    this.retryRequest.emit();
   }
 }

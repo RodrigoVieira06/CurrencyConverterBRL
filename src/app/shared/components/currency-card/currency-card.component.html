@@ -17,7 +17,7 @@
   </footer>
   <main class="card-container__error" *ngIf="onError && !onLoading">
     <p>Algo deu errado</p>
-    <button type="button" (click)="reloadPage()">RECARREGAR</button>
+    <button type="button" (click)="reloadCurrencyMainComponent()">RECARREGAR</button>
   </main>
   <main class="card-container__loading" *ngIf="onLoading">
     <svg width='100px' height='100px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"

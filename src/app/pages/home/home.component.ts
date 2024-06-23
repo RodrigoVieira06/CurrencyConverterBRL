@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.subscriptions.add(this.getCurrenciesData());
+      this.getCurrenciesData();
     }
   }
 
@@ -37,25 +37,20 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
-  public getCurrenciesData(): Subscription {
+  public getCurrenciesData(): void {
     this.onLoading = true;
     this.currenciesData = environment.INITIAL_CURRENCIES_MOCKDATA;
 
-    return this.currencyConverterService.getCurrencies()
-      .subscribe({
-        next: (currencyConverterAPIResponse: ICurrencyTypes) => {
-          let currencies: ICurrency[] = [];
-          for (const currencyCode in currencyConverterAPIResponse) {
-            currencies.push(currencyConverterAPIResponse[currencyCode]);
-          }
-          this.currenciesData = [...currencies];
-          this.onError = false;
-          this.onLoading = false;
-        },
-        error: () => {
-          this.onError = true;
-          this.onLoading = false;
-        }
-      });
+    this.subscriptions.add(this.currencyConverterService.getCurrencies().subscribe({
+      next: (currencyConverterAPIResponse: ICurrencyTypes) => {
+        this.currenciesData = Object.values(currencyConverterAPIResponse);
+        this.onError = false;
+        this.onLoading = false;
+      },
+      error: () => {
+        this.onError = true;
+        this.onLoading = false;
+      }
+    }));
   }
 }
