@@ -13,6 +13,10 @@
   background-color: $app-header-background;
 
   img {
-    width: 265px;
+    width: 220px;
+
+    @media (min-width: 460px) {
+      width: 265px;
+    }
   }
 }

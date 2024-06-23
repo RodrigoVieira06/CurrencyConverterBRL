@@ -4,22 +4,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 430px;
-  height: 428px;
+  width: 275px;
+  height: 274px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 
+  @media (min-width: 460px) {
+    width: 430px;
+    height: 428px;
+  }
+
   &__header {
-    min-height: 119px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $card-header-background;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    font-weight: 700;
-    font-size: 30px;
     color: $text-basic;
+    font-weight: 700;
+    min-height: 70px;
+    font-size: 22px;
+
+    @media (min-width: 460px) {
+      min-height: 119px;
+      font-size: 30px;
+    }
   }
 
   &__body {
@@ -28,7 +38,7 @@
     justify-content: center;
     background-color: $card-background;
     height: 100%;
-    font-size: 64px;
+    font-size: 42px;
     color: $text-green;
 
     .red-condition {
@@ -38,10 +48,14 @@
     .blue-condition {
       color: $text-blue;
     }
+
+    @media (min-width: 460px) {
+      font-size: 64px;
+    }
   }
 
   &__footer {
-    min-height: 111.52px;
+    min-height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -61,19 +75,31 @@
 
       :first-child {
         font-weight: 600;
-        font-size: 18px;
+        font-size: 14px;
         color: $text-secundary;
+
+        @media (min-width: 460px) {
+          font-size: 18px;
+        }
       }
 
       :last-child {
         font-weight: 600;
-        font-size: 24px;
+        font-size: 18px;
         color: $text-basic;
+
+        @media (min-width: 460px) {
+          font-size: 24px;
+        }
       }
     }
 
     .borderCenter {
       border-right: 1px solid $border-color;
+    }
+
+    @media (min-width: 460px) {
+      min-height: 111.52px;
     }
   }
 
