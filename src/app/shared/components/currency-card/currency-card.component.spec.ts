@@ -78,4 +78,12 @@ describe('currency-cardComponent', () => {
     const loadingSection = fixture.debugElement.query(By.css('.card-container__loading'));
     expect(loadingSection).toBeTruthy();
   });
+
+  it('should emit retryRequest event when reloadCurrencyMainComponent is called', () => {
+    spyOn(component.retryRequest, 'emit');
+
+    component.reloadCurrencyMainComponent();
+
+    expect(component.retryRequest.emit).toHaveBeenCalled();
+  });
 });
