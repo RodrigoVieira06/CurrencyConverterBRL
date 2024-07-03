@@ -4,12 +4,7 @@
 
 # Bem vindo ao sistema de conversão de moedas - Por Rodrigo Vieira 🚀
 
-Este é um sistema desenvolvido com a finalidade de atender o teste de proficiência
-em tecnologias front-end da empresa Frete Rápido. Nele, você irá encontrar uma
-interface limpa contendo a conversão da moeda Real Brasileiro (BRL), para 3 outras
-moedas: Dólar Canadense (CAD), Peso Argentino (ARS) e Libra Esterlina (GBP). Além
-disso, cada conversão contará com sua variação (em porcentagem) e o tempo de
-atualização, onde as informações são atualizadas a cada 3 minutos pela plataforma.
+Este é um sistema desenvolvido com a finalidade de atender a conversão da moeda Real Brasileiro (BRL), para 3 outras moedas: Dólar Canadense (CAD), Peso Argentino (ARS) e Libra Esterlina (GBP). Além disso, cada conversão contará com sua variação (em porcentagem) e o tempo de atualização, onde as informações são atualizadas a cada 3 minutos pela plataforma.
 
 ## Índice 📝
 
