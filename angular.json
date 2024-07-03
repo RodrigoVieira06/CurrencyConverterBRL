@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "freteRapidoTest-CurrencyConverterBRL2": {
+    "CurrencyConverterBRL2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/frete-rapido-test-currency-converter-brl2",
+            "outputPath": "dist/test-currency-converter-brl2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "freteRapidoTest-CurrencyConverterBRL2:build:production"
+              "buildTarget": "CurrencyConverterBRL2:build:production"
             },
             "development": {
-              "buildTarget": "freteRapidoTest-CurrencyConverterBRL2:build:development"
+              "buildTarget": "CurrencyConverterBRL2:build:development"
             }
           },
           "defaultConfiguration": "development"

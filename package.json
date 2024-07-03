@@ -1,5 +1,5 @@
 {
-  "name": "frete-rapido-test-currency-converter-brl2",
+  "name": "currency-converter-brl2",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:freteRapidoTest-CurrencyConverterBRL2": "node dist/frete-rapido-test-currency-converter-brl2/server/server.mjs"
+    "serve:ssr:CurrencyConverterBRL2": "node dist/currency-converter-brl2/server/server.mjs"
   },
   "private": true,
   "dependencies": {
