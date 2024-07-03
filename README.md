@@ -31,8 +31,8 @@ vá até o diretório desejado e realize o clone via SSH e vá até a pasta prin
 da seguinte forma:
 
 ```sh
-git clone git@github.com:RodrigoVieira06/freteRapidoTest-CurrencyConverterBRL.git
-cd freteRapidoTest-CurrencyConverterBRL/
+git clone git@github.com:RodrigoVieira06/CurrencyConverterBRL.git
+cd CurrencyConverterBRL/
 ```
 
 Com o repositorio em mãos, podemos inciar com seguinde comando:
